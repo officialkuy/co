@@ -6,15 +6,16 @@
   <a href="{{ url | relative_url }}" {% if url == page.url %}class="selected"{% endif %}>
     {%- if item.icon -%}<svg aria-label="{{ title }}" class="icon"><use xlink:href="{{ "/assets/fontawesome/icons.svg" | relative_url }}#{{ item.icon }}"></use></svg>{%- else -%}{{ title }}{%- endif -%}
   </a>
-  <script src="{{ site.baseurl }}/assets/simple-jekyll-search.min.js"></script>
-<script>
-  SimpleJekyllSearch({
-    searchInput: document.getElementById("js-search-input"),
-    resultsContainer: document.getElementById("js-results-container"),
-    json: "{{site.baseurl}}/search.json",
-    searchResultTemplate: '<li class="search-results__item"><a class="search-results__link" href="{url}">{title}</a><br> <span class="search-results__date">{date}</span></li>',
-    noResultsText: '<li class="no-results">No results found</li>'
-  });
-</script>
+  <div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div id="search-bar">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <input id="search" type="text" placeholder="Search..." />
+        <div id="search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
 {%- endfor -%}
 </nav>
